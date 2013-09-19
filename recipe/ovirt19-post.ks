@@ -68,6 +68,8 @@ cat > /etc/sysconfig/iptables << \EOF
 -A INPUT -p tcp --dport 16514 -j ACCEPT
 # SSH
 -A INPUT -p tcp --dport 22 -j ACCEPT
+# Foreman Proxy
+-A INPUT -p tcp --dport 8443 -j ACCEPT
 # guest consoles
 -A INPUT -p tcp -m multiport --dports 5634:6166 -j ACCEPT
 # migration
@@ -91,6 +93,8 @@ cat > /etc/sysconfig/ip6tables << \EOF
 -A INPUT -i lo -j ACCEPT
 # SSH
 -A INPUT -p tcp --dport 22 -j ACCEPT
+# Foreman Proxy
+-A INPUT -p tcp --dport 8443 -j ACCEPT
 # guest consoles
 -A INPUT -p tcp -m multiport --dports 5634:6166 -j ACCEPT
 # migration
